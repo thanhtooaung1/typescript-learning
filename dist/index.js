@@ -1,14 +1,15 @@
 "use strict";
-// Interface
-let author = { name: 'John', age: 30 };
-let post = { title: 'Work Balance', readingTime: 2, author: author };
-// return interface
-function createPost(post) {
-    console.log(`${post.title} is created by ${post.author.name}`);
-    return post;
+// Type Alias
+function createColor() {
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+    return [r, g, b];
 }
-let newPost = createPost(post);
-// array with interface
-let posts = [];
-posts.push(newPost);
-console.log(posts);
+const color1 = createColor();
+const color2 = createColor();
+console.log(color1, color2);
+function formatUser(user) {
+    console.log(`${user.name} is ${user.age} years old`);
+}
+formatUser({ name: 'Mg Mg', age: 30 });

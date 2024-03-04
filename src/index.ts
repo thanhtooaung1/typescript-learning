@@ -1,31 +1,29 @@
-// Interface
+// Type Alias
 
-interface Author {
+type RGB = [number, number, number];
+
+function createColor(): RGB {
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+
+    return [r, g, b];
+}
+
+const color1 = createColor();
+const color2 = createColor();
+
+console.log(color1, color2);
+
+type User = {
     name: string,
     age: number
 }
 
-let author : Author = { name: 'John', age: 30 };
-
-interface Post {
-    title: string,
-    readingTime: number,
-    author: Author
+function formatUser(user: User) {
+    console.log(`${user.name} is ${user.age} years old`);
 }
 
-let post : Post = { title: 'Work Balance', readingTime: 2, author: author };
+formatUser({name: 'Mg Mg', age: 30});
 
-// return interface
-function createPost(post: Post): Post {
-    console.log(`${post.title} is created by ${post.author.name}`);
-    return post;
-}
 
-let newPost = createPost(post);
-
-// array with interface
-let posts: Post[] = [];
-
-posts.push(newPost);
-
-console.log(posts);
