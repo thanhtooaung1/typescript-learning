@@ -1,14 +1,14 @@
 "use strict";
-function addTwoNumbers(num1, num2) {
-    return num1 + num2;
+let container;
+// dynamic values
+container = "Mg Mg";
+container = true;
+container = 20;
+// any types parameter and return any value
+function doSomething(value1, value2) {
+    return value1 + value2;
 }
-function substractTwoNumbers(num1, num2) {
-    return num1 - num2;
-}
-function addAllNumbers(numbers) {
-    return numbers.reduce((t, c) => t + c, 0);
-}
-// const result = addTwoNumbers(5,8);
-// const result = substractTwoNumbers(20, 5);
-const result = addAllNumbers([20, 5, 6]);
+const result = doSomething("hello", 20);
 console.log(result);
+// any type array
+const array = ["Hello", 30, true];

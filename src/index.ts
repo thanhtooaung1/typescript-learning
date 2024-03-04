@@ -1,16 +1,15 @@
-let container: any
+// Tuples
 
-// dynamic values
-container = "Mg Mg";
-container = true;
-container = 20;
+let person : [string, number, boolean] = ['mg mg', 20, true];
 
-// any types parameter and return any value
-function doSomething(value1: any, value2: any):any {
-    return value1 + value2;
+// name tuples
+let user : [name: string, age: number]
+user = ['aung aung', 23];
+console.log(user[0]);
+
+// return tuples
+function getTwoNumber(): [number, number] {
+    return [0, 1];
 }
 
-const result = doSomething("hello", 20);
-
-// any type array
-const array: any[] = ["Hello", 30, true];
+let [num1, num2] = getTwoNumber();
