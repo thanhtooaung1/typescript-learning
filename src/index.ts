@@ -1,9 +1,17 @@
-let names: string[] = ['Kyaw Kyaw', 'Mg Mg'];
-// names.push(true);   // type error
-names.push('Aye Aye');
-console.log(names[0]);
+function addTwoNumbers(num1: number, num2: number): number {
+    return num1 + num2;
+}
 
-let ages = [22, 23];
-// ages.push('30');   // type error
-ages.push(20);
-console.log(ages[1]);
+function substractTwoNumbers(num1:number, num2: number):number {
+    return num1 - num2;
+}
+
+function addAllNumbers(numbers: number[]):number {
+    return numbers.reduce((t, c) => t+c, 0);
+}
+
+// const result = addTwoNumbers(5,8);
+// const result = substractTwoNumbers(20, 5);
+const result = addAllNumbers([20, 5, 6]);
+
+console.log(result);
