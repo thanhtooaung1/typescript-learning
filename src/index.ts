@@ -1,29 +1,16 @@
-// Type Alias
+// Union type
 
-type RGB = [number, number, number];
+let email : string | null
 
-function createColor(): RGB {
-    let r = Math.floor(Math.random() * 255);
-    let g = Math.floor(Math.random() * 255);
-    let b = Math.floor(Math.random() * 255);
+email = null;
+email = 'thanhtoo@gmail.com'
 
-    return [r, g, b];
-}
+console.log(email);
 
-const color1 = createColor();
-const color2 = createColor();
+// Type alias for union
+type Id = string | number
 
-console.log(color1, color2);
+let orderId : Id = 'R340430';
+orderId = 434;
 
-type User = {
-    name: string,
-    age: number
-}
-
-function formatUser(user: User) {
-    console.log(`${user.name} is ${user.age} years old`);
-}
-
-formatUser({name: 'Mg Mg', age: 30});
-
-
+console.log(orderId);
