@@ -1,15 +1,31 @@
-// Tuples
+// Interface
 
-let person : [string, number, boolean] = ['mg mg', 20, true];
-
-// name tuples
-let user : [name: string, age: number]
-user = ['aung aung', 23];
-console.log(user[0]);
-
-// return tuples
-function getTwoNumber(): [number, number] {
-    return [0, 1];
+interface Author {
+    name: string,
+    age: number
 }
 
-let [num1, num2] = getTwoNumber();
+let author : Author = { name: 'John', age: 30 };
+
+interface Post {
+    title: string,
+    readingTime: number,
+    author: Author
+}
+
+let post : Post = { title: 'Work Balance', readingTime: 2, author: author };
+
+// return interface
+function createPost(post: Post): Post {
+    console.log(`${post.title} is created by ${post.author.name}`);
+    return post;
+}
+
+let newPost = createPost(post);
+
+// array with interface
+let posts: Post[] = [];
+
+posts.push(newPost);
+
+console.log(posts);

@@ -1,14 +1,14 @@
 "use strict";
-let container;
-// dynamic values
-container = "Mg Mg";
-container = true;
-container = 20;
-// any types parameter and return any value
-function doSomething(value1, value2) {
-    return value1 + value2;
+// Interface
+let author = { name: 'John', age: 30 };
+let post = { title: 'Work Balance', readingTime: 2, author: author };
+// return interface
+function createPost(post) {
+    console.log(`${post.title} is created by ${post.author.name}`);
+    return post;
 }
-const result = doSomething("hello", 20);
-console.log(result);
-// any type array
-const array = ["Hello", 30, true];
+let newPost = createPost(post);
+// array with interface
+let posts = [];
+posts.push(newPost);
+console.log(posts);
