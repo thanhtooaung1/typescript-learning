@@ -1,16 +1,51 @@
-// Union type
-
-let email : string | null
-
-email = null;
-email = 'thanhtoo@gmail.com'
-
-console.log(email);
+// 
+// Type Guards
+//
 
 // Type alias for union
 type Id = string | number
 
-let orderId : Id = 'R340430';
-orderId = 434;
+function getId(id: Id) {
+    if(typeof id === 'string') {
+        return parseInt(id);
+    } else {
+        return id.toString();
+    }
 
-console.log(orderId);
+}
+
+let idOne = getId('2');
+let idTwo = getId(3);
+
+console.log(idOne, idTwo);
+
+// 
+// tagged interfaces
+//
+
+interface User {
+    type: 'user'
+    username: string
+    email: string
+}
+
+interface Person {
+    type: 'person'
+    firstName: string
+    age: number
+}
+
+let user : User = {type: 'user', username: 'Mg Mg', email: 'mgmg@gmail.com'}
+let person : Person = {type: 'person', firstName: 'Mg', age: 22}
+
+function showInformation(data: User | Person) {
+    if(data.type === 'user') {
+        console.log(data.username, data.email);
+    }
+    if(data.type === 'person') {
+        console.log(data.firstName, data.age);
+    }
+}
+
+showInformation(user);
+showInformation(person);
